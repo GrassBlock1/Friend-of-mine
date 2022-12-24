@@ -1,37 +1,46 @@
 [
   {
-    "class_name": "友情链接",
-    "class_desc": "那些人，那些事",
+    "class_name": "站长其它项目",
+    "class_desc": "闲的没事搞的",
     "link_list": [
       {
-        "name": "Hexo",
-        "link": "https://hexo.io/zh-tw/",
-        "avatar": "https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg",
-        "descr": "快速、简单且强大的网志框架"
+        "name": "Hal0",
+        "link": "https://blog.imgb.space",
+        "avatar": "https://lab.imgb.space/img/favicon@square.png",
+        "descr": "宇宙中一个平平无奇的蓝色光环。"
       }
     ]
   },
   {
-    "class_name": "网站",
-    "class_desc": "值得推荐的网站",
+    "class_name": "友人",
+    "class_desc": "行走于网络世界，结交的一群朋友",
     "link_list": [
       {
-        "name": "Youtube",
-        "link": "https://www.youtube.com/",
-        "avatar": "https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png",
-        "descr": "视频网站"
+        "name": "Huan's Log",
+        "link": "https://blog.nekohuan.cyou/",
+        "avatar": "https://cdn.jsdelivr.net/gh/kuohuanhuan/cdn@master/profile@2x.webp",
+        "descr": "together we advance_"
       },
       {
-        "name": "Weibo",
-        "link": "https://www.weibo.com/",
-        "avatar": "https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png",
-        "descr": "中国最大社交分享平台"
+        "name": "Lapis Apple's Recycle Bin",
+        "link": "https://laple.me/",
+        "avatar": https://s1.ax1x.com/2020/04/12/GqhDs0.png",
+        "descr": "一个回收站，里面住着Lapis Apple。"
       },
       {
-        "name": "Twitter",
-        "link": "https://twitter.com/",
-        "avatar": "https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png",
-        "descr": "社交分享平台"
+        "name": "SKYRE NOTE",
+        "link": "https://www.skyre.cn/",
+        "avatar": "https://q.qlogo.cn/g?b=qq&nk=2065907498&s=640",
+        "descr": "JUST RECORD MY LIFE AND STUDY NOTES"
+      },
+      {
+        "name": "Tim_Paik的项目博客",
+        "link": "https://gh.timpaik.top/",
+        "avatar": "https://mapp.alicdn.com/1633244893074BvoBzYrEgzOwpbz.png",
+        "descr": "一些有的没的小项目 & Tim_Paik 的碎碎念"
+      },
+      {
+        "name": 
       }
     ]
   }
