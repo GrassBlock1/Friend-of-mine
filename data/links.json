@@ -40,7 +40,28 @@
         "descr": "一些有的没的小项目 & Tim_Paik 的碎碎念"
       },
       {
-        "name": 
+        "name": "Zhuym 的博客",
+        "link": "https://zhuym-blog.vercel.app",
+        "avatar": "https://s1.ax1x.com/2022/03/06/bBDeJI.png",
+        "descr": "Zhuym的个人博客"
+      },
+      {
+        "name": "JackieCat 的猫窝",
+        "link": "https://www.jackiecat.top",
+        "avatar": "https://public.sunyz.net/persons/JackieCat.jpg/webp",
+        "descr": "一只猫猫的猫窝"
+      },
+      {
+        "name": "Maxel's Pages",
+        "link": "https://blog.maxelbk.eu.org/",
+        "avatar": "https://blog.maxelbk.eu.org/r/maxel.jpg",
+        "descr": "Code & write what we want."
+      },
+      {
+        "name": "咕萌小站",
+        "link": "https://gmoe.cc/",
+        "avatar": "https://gmoe.cc/img/gu.jpg",
+        "descr": "「世界に忘れられた」"
       }
     ]
   }
