@@ -1,6 +1,9 @@
 # 草方块的朋友们
 哦，你也想成为咱的朋友吗？
 
+![GitHub Repo stars](https://img.shields.io/github/stars/Grassblock1/Friend-of-mine?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/GrassBlock1/friend-of-mine?color=green&style=for-the-badge)
+
 ## Warning
 此处提交的是"Mare_Infinitus"(lab.imgb.space)的友链信息。
 
