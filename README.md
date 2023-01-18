@@ -42,10 +42,15 @@
 1. 添加本站信息
 
 >    名字：Mare_Infinitus
+>
 >    站长：草方块
+>
 >    链接：https://lab.imgb.space
+>
 >    介绍：77569号奇点观察员的观察日志
+>
 >    Logo：https://lab.imgb.space/img/favicon@square.png
+>
 >    横幅：还没做.jpg
 
 *介绍可以自定义的说*
