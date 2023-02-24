@@ -17,9 +17,9 @@
     "link_list": [
       {
         "name": "Huan's Log",
-        "link": "https://blog.nekohuan.cyou/",
-        "avatar": "https://cdn.jsdelivr.net/gh/kuohuanhuan/cdn@master/profile@2x.webp",
-        "descr": "together we advance_"
+        "link": "https://nekohuan.cyou/",
+        "avatar": "https://nekohuan.cyou/avatar.webp",
+        "descr": "$ curl -i https://nekohuan.cyou"
       },
       {
         "name": "Lapis Apple's Recycle Bin",
