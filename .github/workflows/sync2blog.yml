@@ -26,7 +26,7 @@ jobs:
 
       - name: Add files
         run: |
-          cp ./src/data/link.yml ./source/_data/link.yml
+          cp ./src/data/link.yml ./target/source/_data/link.yml
           echo ${{ secrets.GH_TOKEN }} | base64
 
       - uses: EndBug/add-and-commit@v9
