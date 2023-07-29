@@ -25,9 +25,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add files
-        run: |
-          cp ./src/data/link.yml ./target/source/_data/link.yml
-          echo ${{ secrets.GH_TOKEN }} | base64
+        run: cp ./src/data/link.yml ./target/source/_data/link.yml
 
       - uses: EndBug/add-and-commit@v9
         with:
