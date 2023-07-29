@@ -7,7 +7,7 @@
 ## Warning
 此处提交的是"Mare_Infinitus"(lab.imgb.space)的友链信息。
 
-如果要提交Hal0的友链信息，请转到blog分支。
+**本库正式转为提交更改YAML的方式进行收集友链，请不要再对旧有的JSON文件做任何修改！！**
 ## Thinking
 在这个独立博客式微的时代，友情链接的意义是什么？
 按照 [Wikipedia](https://zh.wikipedia.org/wiki/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5) 上的定义，这种「两个或者以上的网站互相放上对方的链接，达到向用户推荐以互相共享用户群的一种 SEO 方式」有着不少优点，包括但不限于提高网站权重、知名度、转化率。
@@ -70,15 +70,14 @@
         - 使用现代浏览器（如 Chrome、Firefox、Opera等等）可以正常查看的文件格式，如 `png`、`jpg`、`webp`、`avif`、`svg`、`ico` 等等
     - 原则上站点信息应当适合在任何网站上展示给任何年龄段的任何人
 3. 在Github上Fork此仓库。
-4. 参照 [Butterfly 文档](https://butterfly.js.org/posts/dc584b87/#%E5%89%B5%E5%BB%BA%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E9%A0%81%E9%9D%A2) 和[JSON 语法](https://www.runoob.com/json/json-syntax.html)修改 `data/links.json` ~~直接参照已有格式添加就可以~~
+4. 参照 [Butterfly 文档](https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0) 和[YAML 入门](https://www.runoob.com/w3cnote/yaml-intro.html)修改 `data/link.yml` ~~直接参照已有格式添加就可以~~
     格式大致如下（仅供参考）：
-    ```json
-          {
-            "name": "站点名称",
-            "link": "https://example.com/",
-            "avatar": "https://example.com/img.png",
-            "descr": "站点介绍"
-          }
+    ```yaml
+        - name": "站点名称",
+          link: "https://example.com/",
+          avatar: "https://example.com/img.png",
+          descr: "站点介绍"
+          
     ```
 5. 完成后新建一个Pull Request即可。
 当你的Pull Request被通过后，即可显示在[友链页面](https://lab.imgb.space/friends)。
