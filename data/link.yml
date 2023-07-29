@@ -1,0 +1,50 @@
+- class_name: 站长其它项目
+  class_desc: 闲的没事搞的
+  link_list:
+    - name: Hal0
+      link: https://blog.imgb.space
+      avatar: https://lab.imgb.space/img/favicon@square.png
+      descr: 宇宙中一个平平无奇的蓝色光环。
+- class_name: 友人
+  class_desc: 行走于网络世界，结交的一群朋友
+  link_list:
+    - name: Huan's Log
+      link: https://nekohuan.cyou/
+      avatar: https://static.def096.tw/avatars/webp/avatar_96x96.webp
+      descr: "$ curl -i https://nekohuan.cyou"
+    - name: Lapis Apple's Recycle Bin
+      link: https://laple.me/
+      avatar: https://s1.ax1x.com/2020/04/12/GqhDs0.png
+      descr: 一个回收站，里面住着Lapis Apple。
+    - name: SKYRE NOTE
+      link: https://www.skyre.cn/
+      avatar: https://q.qlogo.cn/g?b=qq&nk=2065907498&s=640
+      descr: JUST RECORD MY LIFE AND STUDY NOTES
+    - name: Tim_Paik的项目博客
+      link: https://gh.timpaik.top/
+      avatar: https://mapp.alicdn.com/1633244893074BvoBzYrEgzOwpbz.png
+      descr: 一些有的没的小项目 & Tim_Paik 的碎碎念
+    - name: Zhuym 的博客
+      link: https://zhuym-blog.vercel.app
+      avatar: https://s1.ax1x.com/2022/03/06/bBDeJI.png
+      descr: Zhuym的个人博客
+    - name: JackieCat 的猫窝
+      link: https://jackiecat.top
+      avatar: https://106.55.183.72/lsky/1/avatar.jpg
+      descr: 一只猫猫的猫窝
+    - name: Maxel's Pages
+      link: https://blog.maxelbk.eu.org/
+      avatar: https://blog.maxelbk.eu.org/r/maxel.jpg
+      descr: Code & write what we want.
+    - name: 咕萌小站
+      link: https://gmoe.cc/
+      avatar: https://gmoe.cc/img/gu.jpg
+      descr: "「世界に忘れられた」"
+    - name: 捞人的小站
+      link: https://zwh.moe/
+      avatar: https://fastly.jsdelivr.net/gh/wuhang2003/images@main/avatar.jpg
+      descr: 一起来玩吧~
+    - name: Hao_Tian
+      link: https://haotian22.top
+      avatar: https://www.haotian22.top/img/head.jpg
+      descr: 生命不息，折腾不止ヾ(≧▽≦*)o
