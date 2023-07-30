@@ -1,14 +1,14 @@
-name: 'Sync Friends link to blog'
+name: Sync friends' link to blog
 
 on:
-  # Run if push to `master` branch
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout (GrassBlock1/hexo)
         uses: actions/checkout@v3
@@ -30,11 +30,9 @@ jobs:
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v9
         with:
-            add: source/_data/link.yml
-            # author_name: GB-427
-            # author_email: 140889679+GB-427@users.noreply.github.com
-            cwd: ./target
-            default_author: github_actions
-            message: 'chore: sync files (pushed by GitHub Actions)'
-            fetch: true
-            push: true
+          cwd: ./target
+          default_author: github_actions
+          add: source/_data/link.yml
+          message: 'chore: sync files (pushed by GitHub Actions)'
+          fetch: true
+          push: true
