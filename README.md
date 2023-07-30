@@ -38,7 +38,7 @@
 7. 网站需要人类可读，~~没有css也行，但是不能在该有css的地方让css缺席~~（（
 8. 网站需要宽容ADblocker等插件，不接受使用Anti-Adblocker等服务使得访客无法正常存取网站的网站（当然有诸如“为了更好支持站点，请关闭广告屏蔽插件”的提示，但不影响正常访问的可以接受）
 
-无论如何，你都需要掌握基本的Git&Github使用方法，以及一点JSON知识 ~~（其实没有的话也行，用VS Code什么的自动补全）~~ 。
+无论如何，你都需要掌握基本的Git&Github使用方法，以及一点YAML知识 ~~（其实没有的话也行，用VS Code什么的自动补全）~~ 。
 
 ### How to
 #### 如果你有一个博客/个人主页
@@ -70,10 +70,11 @@
         - 使用现代浏览器（如 Chrome、Firefox、Opera等等）可以正常查看的文件格式，如 `png`、`jpg`、`webp`、`avif`、`svg`、`ico` 等等
     - 原则上站点信息应当适合在任何网站上展示给任何年龄段的任何人
 3. 在Github上Fork此仓库。
-4. 参照 [Butterfly 文档](https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0) 和[YAML 入门](https://www.runoob.com/w3cnote/yaml-intro.html)修改 `data/link.yml` ~~直接参照已有格式添加就可以~~
+4. 参照 [Butterfly 文档](https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0) 和[YAML 入门](https://www.runoob.com/w3cnote/yaml-intro.html)修改 `data/link.yml` ~~或者直接参照已有格式添加就可以~~
+
     格式大致如下（仅供参考）：
     ```yaml
-        - name": "站点名称",
+        - name: "站点名称",
           link: "https://example.com/",
           avatar: "https://example.com/img.png",
           descr: "站点介绍"
