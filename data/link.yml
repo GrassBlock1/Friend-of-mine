@@ -10,7 +10,7 @@
   link_list:
     - name: Huan's Log
       link: https://nekohuan.cyou/
-      avatar: https://static.def096.tw/avatars/webp/avatar_96x96.webp
+      avatar: https://img.rnmeow.com/avatars/webp/avatar_96x96.webp # 準備建新站
       descr: "$ curl -i https://nekohuan.cyou"
     - name: Lapis Apple's Recycle Bin
       link: https://laple.me/
