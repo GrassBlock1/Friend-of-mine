@@ -10,17 +10,17 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (grassblock1/hexo)
+      - name: Checkout (GrassBlock1/hexo)
         uses: actions/checkout@v3
         with:
-          repository: grassblock1/hexo
+          repository: GrassBlock1/hexo
           path: ./target
           token: ${{ secrets.GH_TOKEN }} # Personal Access Token
 
-      - name: Checkout (grassblock1/friend-of-mine)
+      - name: Checkout (GrassBlock1/Friend-of-mine)
         uses: actions/checkout@v3
         with:
-          repository: grassblock1/friend-of-mine
+          repository: GrassBlock1/Friend-of-mine
           path: ./src
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -33,7 +33,6 @@ jobs:
             add: source/_data/link.yml
             # author_name: GB-427
             # author_email: 140889679+GB-427@users.noreply.github.com
-            commit: --signoff
             cwd: ./target
             default_author: github_actions
             message: 'chore: sync files (pushed by GitHub Actions)'
