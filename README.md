@@ -77,8 +77,7 @@
         - name: "站点名称",
           link: "https://example.com/",
           avatar: "https://example.com/img.png",
-          descr: "站点介绍"
-          
+          descr: "站点介绍"  
     ```
 5. 完成后新建一个Pull Request即可。
 当你的Pull Request被通过后，即可显示在[友链页面](https://lab.imgb.space/friends)。
