@@ -13,7 +13,7 @@ jobs:
       - name: Checkout (GrassBlock1/hexo)
         uses: actions/checkout@v3
         with:
-          repository: GrassBlock1/hexo
+          repository: GrassBlock1/lab-2024
           path: ./target
           token: ${{ secrets.GH_TOKEN }} # Personal Access Token
 
@@ -25,14 +25,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Copy files to blog repo
-        run: cp ./src/data/link.yml ./target/source/_data/link.yml
+        run: cp ./src/data/link.yml ./target/data/link.yml
 
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v9
         with:
           cwd: ./target
           default_author: github_actions
-          add: source/_data/link.yml
-          message: 'chore: sync files (pushed by GitHub Actions)'
+          add: data/link.yml
+          message: 'chore: sync friend links (pushed by GitHub Actions)'
           fetch: true
           push: true
