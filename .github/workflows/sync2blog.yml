@@ -10,7 +10,7 @@ jobs:
   sync:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout (GrassBlock1/hexo)
+      - name: Checkout lab repo
         uses: actions/checkout@v3
         with:
           repository: GrassBlock1/lab-2024
