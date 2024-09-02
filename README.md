@@ -5,7 +5,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/GrassBlock1/friend-of-mine?color=green&style=for-the-badge)
 
 ## Warning
-此处提交的是"Mare_Infinitus"(lab.imgb.space)的友链信息。
+此处提交的是"/var/log/gblab"(lab.imgb.space)的友链信息。
 
 **本库正式转为提交更改YAML的方式进行收集友链，请不要再对旧有的JSON文件做任何修改！！**
 ## Thinking
@@ -44,17 +44,19 @@
 #### 如果你有一个博客/个人主页
 1. 添加本站信息
 
->    名字：Mare_Infinitus
+>    名字：/var/log/gblab
 >
 >    站长：草方块
 >
+>    头像： https://lab.imgb.space/img/avatar_hu18259482115027619534.png
+>
 >    链接：https://lab.imgb.space
 >
->    介绍：77569号奇点观察员的观察日志
+>    介绍：此处会不定时产生包含大量废话的日志
 >
->    Logo：https://lab.imgb.space/img/favicon@square.png
+>    Logo：https://lab.imgb.space/img/logo@square.png *（这个和上面头像的选择一个你觉得合适的放上去）*
 >
->    横幅：还没做.jpg
+>    横幅：https://lab.imgb.space/img/blog-cover.png
 
 *介绍可以自定义的说*
 
@@ -66,8 +68,8 @@
     - 站点Logo的要求：
         - 中心对称图形，如正方形、圆形、菱形等
         - 长度及宽度不超过1440px
-        - 建议使用长期稳定的托管服务托管logo，如果实在没有可以将logo放在 img 文件夹下
-        - 使用现代浏览器（如 Chrome、Firefox、Opera等等）可以正常查看的文件格式，如 `png`、`jpg`、`webp`、`avif`、`svg`、`ico` 等等
+        - 建议使用长期稳定的托管服务托管logo，如果实在没有可以将logo放在此仓库的 img 文件夹下，并贴入比如 jsdelivr 等服务提供的**可供大陆地区访问的链接**
+        - 使用现代浏览器的较新版本（如 Chrome、Firefox、Opera等等）可以正常查看的文件格式，如 `png`、`jpg`、`webp`、`avif`、`svg`、`ico` 等等
     - 原则上站点信息应当适合在任何网站上展示给任何年龄段的任何人
 3. 在Github上Fork此仓库。
 4. 参照 [Butterfly 文档](https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0) 和[YAML 入门](https://www.runoob.com/w3cnote/yaml-intro.html)修改 `data/link.yml` ~~或者直接参照已有格式添加就可以~~
