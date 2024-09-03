@@ -52,7 +52,7 @@
 >
 >    链接：https://lab.imgb.space
 >
->    介绍：此处会不定时产生包含大量废话的日志
+>    介绍：此处会不定时产生包含大量废话的日志文件
 >
 >    Logo：https://lab.imgb.space/img/logo@square.png *（这个和上面头像的选择一个你觉得合适的放上去）*
 >
