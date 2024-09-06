@@ -33,4 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CHECKER_LOGS: ${{needs.check.outputs.output}}
         with:
-          filename: .github/ISSUE_TEMPLATE/🤖-友链检查器.md
+          filename: .github/ISSUE_TEMPLATE/友链检查器.md
+      - uses: OSDKDev/lock-issues@v1.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
