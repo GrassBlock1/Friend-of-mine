@@ -1,0 +1,34 @@
+# .github/workflows/issue-on-push.yml
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: 0 0 */14 * *
+
+name: check friend links && create an issue
+permissions:
+  contents: read
+  issues: write 
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+        output: ${{ steps.run.outputs.log }}
+    steps:
+        - name: "checkout"
+          uses: actions/checkout@v3
+        - name: "run-script"
+          id: "run"
+          run: |
+            pip install -r checker/requirements.txt
+            echo 'log<<EOF' >> $GITHUB_OUTPUT
+            python checker/main.py >> $GITHUB_OUTPUT
+            echo 'EOF' >> $GITHUB_OUTPUT
+  issue:
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v3
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHECKER_LOGS: ${{needs.check.outputs.output}}
