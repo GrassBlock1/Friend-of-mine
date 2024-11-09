@@ -6,10 +6,10 @@
       link: https://nekohuan.cyou/
       avatar: https://img.rnmeow.com/avatars/webp/avatar_96x96.webp # 準備建新站
       descr: "$ curl -i https://nekohuan.cyou"
-    - name: Lapis Apple's Recycle Bin
-      link: https://laple.me/
-      avatar: https://s1.ax1x.com/2020/04/12/GqhDs0.png
-      descr: 一个回收站，里面住着Lapis Apple。
+    #- name: Lapis Apple's Recycle Bin
+    #  link: https://laple.me/
+    #  avatar: https://s1.ax1x.com/2020/04/12/GqhDs0.png
+    #  descr: 一个回收站，里面住着Lapis Apple。
     - name: 辉辉狐的笔记
       link: https://note.ifoxhui.com
       avatar: https://frame.ifoxhui.com/image/1706096850b2893c5013a47465.webp
@@ -26,10 +26,11 @@
       link: https://jackiecat.top
       avatar: https://106.55.183.72/lsky/1/avatar.jpg
       descr: 一只猫猫的猫窝
-    - name: Maxel's Pages
-      link: https://blog.maxelbk.eu.org/
-      avatar: https://blog.maxelbk.eu.org/r/maxel.jpg
-      descr: Code & write what we want.
+    #- name: Maxel's Pages
+    #  link: https://blog.maxelbk.eu.org/
+    #  avatar: https://blog.maxelbk.eu.org/r/maxel.jpg
+    #  descr: Code & write what we want.
+    # In memory of Maxel Black.
     - name: 咕萌小站
       link: https://gmoe.cc/
       avatar: https://gmoe.cc/img/gu.jpg
