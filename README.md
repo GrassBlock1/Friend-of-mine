@@ -5,7 +5,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/GrassBlock1/friend-of-mine?color=green&style=for-the-badge)
 
 ## Warning
-此处提交的是"/var/log/gblab"(lab.imgb.space)的友链信息。
+此处提交的是"/var/log/gblab"(lab.gb0.dev)的友链信息。
 
 **本库正式转为提交更改YAML的方式进行收集友链，请不要再对旧有的JSON文件做任何修改！！**
 ## Thinking
@@ -48,15 +48,15 @@
 >
 >    站长：草方块
 >
->    头像： https://lab.imgb.space/img/avatar_hu18259482115027619534.png
+>    头像： https://lab.gb0.dev/img/avatar_hu18259482115027619534.png
 >
->    链接：https://lab.imgb.space
+>    链接：https://lab.gb0.dev
 >
 >    介绍：此处会不定时产生包含大量废话的日志文件
 >
->    Logo：https://lab.imgb.space/img/logo@square.png *（这个和上面头像的选择一个你觉得合适的放上去）*
+>    Logo：https://lab.gb0.dev/img/logo@square.png *（这个和上面头像的选择一个你觉得合适的放上去）*
 >
->    横幅：https://lab.imgb.space/img/blog-cover.png
+>    横幅：https://lab.gb0.dev/img/blog-cover.png
 
 *介绍可以自定义的说*
 
@@ -82,7 +82,7 @@
           descr: "站点介绍"  
     ```
 5. 完成后新建一个Pull Request即可。
-当你的Pull Request被通过后，即可显示在[友链页面](https://lab.imgb.space/friends)。
+当你的Pull Request被通过后，即可显示在[友链页面](https://lab.gb0.dev/friends)。
 
 ### 如果你目前没有一个博客/个人主页
 参考[如果你目前没有一个博客/个人主页](#如果你目前没有一个博客个人主页)

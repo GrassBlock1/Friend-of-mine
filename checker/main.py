@@ -102,6 +102,6 @@ def main(yml_file, link, title):
 
 if __name__ == '__main__':
     yaml_file = './data/link.yml'  # 替换成你的 YAML 文件路径
-    custom_link = 'https://lab.imgb.space'  # 替换成你要检测的链接
+    custom_link = 'https://lab.gb0.dev'  # 替换成你要检测的链接
     keyword = '/var/log/gblab'  # 替换成你要检测的关键词
     main(yaml_file, custom_link, keyword)
