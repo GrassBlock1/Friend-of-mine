@@ -19,10 +19,8 @@ jobs:
         - name: "run-script"
           id: "run"
           run: |
-            pip install -r checker/requirements.txt
-            echo 'log<<EOF' >> $GITHUB_OUTPUT
-            python checker/main.py >> $GITHUB_OUTPUT
-            echo 'EOF' >> $GITHUB_OUTPUT
+            ./checker/bin/linkchecker  -file='data/links.yaml' -url="https://lab.gb0.dev"
+            cat backlink_report.md >> $GITHUB_OUTPUT
   issue:
     runs-on: ubuntu-latest
     needs: check
@@ -34,6 +32,6 @@ jobs:
           CHECKER_LOGS: ${{needs.check.outputs.output}}
         with:
           filename: .github/ISSUE_TEMPLATE/友链检查器.md
-      - uses: OSDKDev/lock-issues@v1.1
+      - uses: IOrlandoni/lock-issues@v1.2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
