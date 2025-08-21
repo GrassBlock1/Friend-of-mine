@@ -20,7 +20,9 @@ jobs:
           id: "run"
           run: |
             ./checker/bin/linkchecker  -file='data/links.yaml' -url="https://lab.gb0.dev"
+            echo 'log<<EOF' >> $GITHUB_OUTPUT
             cat backlink_report.md >> $GITHUB_OUTPUT
+            echo 'EOF' >> $GITHUB_OUTPUT
   issue:
     runs-on: ubuntu-latest
     needs: check
