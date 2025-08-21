@@ -48,7 +48,7 @@
 >
 >    站长：草方块
 >
->    头像： https://lab.gb0.dev/img/avatar_hu18259482115027619534.png
+>    头像： https://lab.gb0.dev/img/avatar.png
 >
 >    链接：https://lab.gb0.dev
 >
