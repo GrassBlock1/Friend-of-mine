@@ -15,6 +15,9 @@ import (
 	"time"
 
 	"github.com/fatih/color"
+	"github.com/go-rod/rod"
+	"github.com/go-rod/rod/lib/launcher"
+	"github.com/go-rod/rod/lib/proto"
 	"github.com/olekukonko/tablewriter"
 	"golang.org/x/net/html"
 	"gopkg.in/yaml.v3"
@@ -42,6 +45,7 @@ type CheckResult struct {
 func main() {
 	yamlPath := flag.String("file", "links.yaml", "包含链接的 YAML 文件路径")
 	myBlogURL := flag.String("url", "", "你的博客 URL，用于检测返回链接 (必需)")
+	oldURL := flag.String("ourl", "", "你的博客旧 URL（如果有的话）")
 	concurrency := flag.Int("c", 5, "并发检测的数量")
 	flag.Parse()
 
@@ -69,7 +73,7 @@ func main() {
 
 	for name, info := range links {
 		wg.Add(1)
-		go checkLink(name, info, *myBlogURL, &wg, semaphore, resultsChan)
+		go checkLink(name, info, *myBlogURL, *oldURL, &wg, semaphore, resultsChan)
 	}
 
 	wg.Wait()
@@ -88,7 +92,7 @@ func main() {
 }
 
 // checkLink 函数被重构以支持两步检测
-func checkLink(name string, info LinkInfo, myBlogURL string, wg *sync.WaitGroup, semaphore chan struct{}, resultsChan chan<- CheckResult) {
+func checkLink(name string, info LinkInfo, myBlogURL string, oldURL string, wg *sync.WaitGroup, semaphore chan struct{}, resultsChan chan<- CheckResult) {
 	defer wg.Done()
 	semaphore <- struct{}{}
 	defer func() { <-semaphore }()
@@ -129,11 +133,16 @@ func checkLink(name string, info LinkInfo, myBlogURL string, wg *sync.WaitGroup,
 	}
 
 	// 在首页查找
-	snippet, found := findBacklink(doc, myBlogURL)
+	// 在首页查找
+	snippet, found, isOld := findBacklink(doc, myBlogURL, oldURL)
 	if found {
 		result.BacklinkFound = true
 		result.HTMLSnippet = snippet
-		result.BacklinkLocation = "Homepage"
+		if isOld {
+			result.BacklinkLocation = "Homepage (OLD)"
+		} else {
+			result.BacklinkLocation = "Homepage"
+		}
 		resultsChan <- result
 		return // 找到了，任务结束
 	}
@@ -188,36 +197,145 @@ func checkLink(name string, info LinkInfo, myBlogURL string, wg *sync.WaitGroup,
 	}
 
 	// 在友链页面上再次查找
-	snippet, found = findBacklink(doc2, myBlogURL)
+	snippet, found, isOld = findBacklink(doc2, myBlogURL, oldURL)
 	if found {
 		result.BacklinkFound = true
 		result.HTMLSnippet = snippet
-		result.BacklinkLocation = friendsPageURL
+		if isOld {
+			result.BacklinkLocation = friendsPageURL + " (OLD)"
+		} else {
+			result.BacklinkLocation = friendsPageURL
+		}
+	} else {
+		rdoc, err := getRenderedHTML(friendsPageURL)
+		if err == nil {
+			doc3, err := html.Parse(strings.NewReader(rdoc))
+			if err == nil {
+				snippet, found, isOld = findBacklink(doc3, myBlogURL, oldURL)
+				if found {
+					result.BacklinkFound = true
+					result.HTMLSnippet = snippet
+					if isOld {
+						result.BacklinkLocation = friendsPageURL + " (渲染后) (OLD)"
+					} else {
+						result.BacklinkLocation = friendsPageURL + " (渲染后)"
+					}
+				}
+			}
+		}
 	}
 
 	resultsChan <- result
 }
 
-// findBacklink 函数保持不变
-func findBacklink(n *html.Node, targetURL string) (string, bool) {
-	// ... (代码与之前版本完全相同)
+var (
+	browserInstance *rod.Browser
+	browserOnce     sync.Once
+)
+
+func getBrowser() *rod.Browser {
+	browserOnce.Do(func() {
+		var options string
+		if os.Getenv("SHOW_BROWSER") == "true" {
+			options = launcher.New().
+				Headless(true).
+				Headless(false).
+				MustLaunch()
+		} else {
+			options = launcher.New().MustLaunch()
+		}
+		browserInstance = rod.New().ControlURL(options)
+
+		// 检查环境变量，如果存在则不使用无头模式
+		if err := browserInstance.Connect(); err != nil {
+			log.Printf("浏览器连接失败: %v", err)
+			browserInstance = nil
+		}
+	})
+	return browserInstance
+}
+
+func getRenderedHTML(url string) (string, error) {
+	browser := getBrowser()
+	if browser == nil {
+		return "", fmt.Errorf("浏览器实例不可用")
+	}
+
+	page := browser.MustPage()
+
+	// 拦截图片请求以加快页面加载
+	go page.HijackRequests().MustAdd("*", func(ctx *rod.Hijack) {
+		if ctx.Request.Type() == proto.NetworkResourceTypeImage {
+			// 返回一个透明的 1x1 PNG 图片，节省带宽的同时解决使用 friends-circle-lite 的站点因为图片加载失败反复重试导致卡死的问题
+			ctx.Response.SetBody([]byte{0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0x00, 0x00, 0x00, 0x0D, 0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x08, 0x06, 0x00, 0x00, 0x00, 0x1F, 0x15, 0xC4, 0x89, 0x00, 0x00, 0x00, 0x0D, 0x49, 0x44, 0x41, 0x54, 0x78, 0xDA, 0x63, 0x64, 0x60, 0xF8, 0x5F, 0x0F, 0x00, 0x08, 0x70, 0x01, 0x80, 0xEB, 0x47, 0xBA, 0x92, 0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4E, 0x44, 0xAE, 0x42, 0x60, 0x82})
+			return
+		}
+		if ctx.Request.Type() == proto.NetworkResourceTypeFont {
+			// 阻止第三方字体加载以提高页面加载速度
+			ctx.Response.Fail(proto.NetworkErrorReasonBlockedByClient)
+			return
+		}
+		ctx.ContinueRequest(&proto.FetchContinueRequest{})
+	}).Run()
+
+	page = page.MustNavigate(url)
+
+	if err := page.WaitLoad(); err != nil {
+		return "", err
+	}
+
+	// 等待额外时间让动态内容加载
+	page.MustWaitIdle().Timeout(20 * time.Second).MustWaitStable().Timeout(10 * time.Second).MustWaitNavigation()
+
+	htmlContent, err := page.HTML()
+	defer page.MustClose() // 检测完成后关闭页面
+	if err != nil {
+		return "", err
+	}
+	return htmlContent, nil
+}
+
+// findBacklink 函数检查当前URL和旧URL
+func findBacklink(n *html.Node, targetURL string, oldURL string) (string, bool, bool) {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, attr := range n.Attr {
-			if attr.Key == "href" && attr.Val == targetURL {
-				var buf bytes.Buffer
-				if err := html.Render(&buf, n); err != nil {
-					return "无法渲染 HTML", true
+			if attr.Key == "href" {
+				// 首先检查当前URL
+				targetParsed, err1 := url.Parse(targetURL)
+				hrefParsed, err2 := url.Parse(attr.Val)
+
+				if err1 == nil && err2 == nil &&
+					strings.ToLower(targetParsed.Host) == strings.ToLower(hrefParsed.Host) &&
+					targetParsed.Host != "" {
+					var buf bytes.Buffer
+					if err := html.Render(&buf, n); err != nil {
+						return "无法渲染 HTML", true, false
+					}
+					return buf.String(), true, false
 				}
-				return buf.String(), true
+
+				// 如果提供了旧URL，也检查旧URL
+				if oldURL != "" {
+					oldParsed, err3 := url.Parse(oldURL)
+					if err3 == nil &&
+						strings.ToLower(oldParsed.Host) == strings.ToLower(hrefParsed.Host) &&
+						oldParsed.Host != "" {
+						var buf bytes.Buffer
+						if err := html.Render(&buf, n); err != nil {
+							return "无法渲染 HTML", true, true
+						}
+						return buf.String(), true, true
+					}
+				}
 			}
 		}
 	}
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		if snippet, found := findBacklink(c, targetURL); found {
-			return snippet, true
+		if snippet, found, isOld := findBacklink(c, targetURL, oldURL); found {
+			return snippet, true, isOld
 		}
 	}
-	return "", false
+	return "", false, false
 }
 
 // 新增辅助函数：查找友链页面的 URL
@@ -398,4 +516,13 @@ func printResults(results []CheckResult, myBlogURL string) {
 	// 生成 Markdown 文件
 	generateMarkdownReport(results, myBlogURL)
 	fmt.Printf("\n受检测方式所限，这些检测结果可能不准确，烦请手动前往目标站点核对。\n")
+
+	// 清理浏览器实例
+	log.Printf("清理浏览器实例...")
+	if browserInstance != nil {
+		err := browserInstance.Close()
+		if err != nil {
+			return
+		}
+	}
 }

@@ -19,7 +19,8 @@ jobs:
         - name: "run-script"
           id: "run"
           run: |
-            ./checker/bin/linkchecker  -file='data/links.yaml' -url="https://lab.gb0.dev"
+            chmod +x ./checker/bin/linkchecker
+            ./checker/bin/linkchecker  -file='data/links.yaml' -url="https://lab.gb0.dev" -ourl="https://lab.imgb.space"
             echo 'log<<EOF' >> $GITHUB_OUTPUT
             cat backlink_report.md >> $GITHUB_OUTPUT
             echo 'EOF' >> $GITHUB_OUTPUT
