@@ -241,6 +241,11 @@ func getBrowser() *rod.Browser {
 				Headless(true).
 				Headless(false).
 				MustLaunch()
+		} else if os.Getenv("DISABLE_SANDBOX") == "true" {
+			options = launcher.New().
+				Headless(true).
+				NoSandbox(true).
+				MustLaunch()
 		} else {
 			options = launcher.New().MustLaunch()
 		}
