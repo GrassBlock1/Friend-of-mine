@@ -2,37 +2,42 @@ name: Sync friends' link to blog
 
 on:
   push:
-    branches:
-      - master
+    paths:
+      - 'data/links.yaml'
   workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-22.04
+    permissions:
+      actions: read
     steps:
-      - name: Checkout lab repo
-        uses: actions/checkout@v3
-        with:
-          repository: BlockG-ws/gb-lab
-          path: ./target
-          token: ${{ secrets.GH_TOKEN }} # Personal Access Token
+       - run: gh workflow run deploy.yml --repo BlockG-ws/gb-lab
+         env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Checkout lab repo
+      #  uses: actions/checkout@v3
+      #  with:
+      #    repository: BlockG-ws/gb-lab
+      #    path: ./target
+      #    token: ${{ secrets.GH_TOKEN }} # Personal Access Token
 
-      - name: Checkout (GrassBlock1/Friend-of-mine)
-        uses: actions/checkout@v3
-        with:
-          repository: GrassBlock1/Friend-of-mine
-          path: ./src
-          token: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Checkout (GrassBlock1/Friend-of-mine)
+      #  uses: actions/checkout@v3
+      #  with:
+      #    repository: GrassBlock1/Friend-of-mine
+      #    path: ./src
+      #    token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy files to blog repo
-        run: cp -p ./src/data/links.yaml ./target/src/data/links.yaml
+      #- name: Copy files to blog repo
+      #  run: cp -p ./src/data/links.yaml ./target/src/data/links.yaml
 
-      - name: Add, commit and push
-        uses: EndBug/add-and-commit@v9
-        with:
-          cwd: ./target
-          default_author: github_actions
-          add: src/data/links.yaml
-          message: 'chore: sync friend links (pushed by GitHub Actions)'
-          fetch: true
-          push: true
+      #- name: Add, commit and push
+      #  uses: EndBug/add-and-commit@v9
+      #  with:
+      #    cwd: ./target
+      #    default_author: github_actions
+      #    add: src/data/links.yaml
+      #    message: 'chore: sync friend links (pushed by GitHub Actions)'
+      #    fetch: true
+      #    push: true
