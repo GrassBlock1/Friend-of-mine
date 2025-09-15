@@ -10,7 +10,7 @@ jobs:
   sync:
     runs-on: ubuntu-22.04
     permissions:
-      actions: read
+      actions: write
     steps:
        - run: gh workflow run deploy.yml --repo BlockG-ws/gb-lab
          env:
