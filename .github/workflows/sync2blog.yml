@@ -9,12 +9,10 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-22.04
-    permissions:
-      actions: write
     steps:
        - run: gh workflow run deploy.yml --repo BlockG-ws/gb-lab
          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
       #- name: Checkout lab repo
       #  uses: actions/checkout@v3
       #  with:
