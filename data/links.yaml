@@ -3,38 +3,13 @@ Zuoye's Blog:
   avatar: https://static.zuoye.win/img/16f4b0a54666c5c4.webp
   description: "一大堆作业的博客"
 Huan's Log:
-  link: https://nekohuan.cyou/
-  avatar: https://img.rnmeow.com/avatars/webp/avatar_96x96.webp # 準備建新站
-  description: "$ curl -i https://nekohuan.cyou"
-  #- name: Lapis Apple's Recycle Bin
-  #  link: https://laple.me/
-  #  avatar: https://s1.ax1x.com/2020/04/12/GqhDs0.png
-  #  description: 一个回收站，里面住着Lapis Apple。
-辉辉狐的笔记:
-  link: https://note.ifoxhui.com
-  avatar: https://frame.ifoxhui.com/image/1706096850b2893c5013a47465.webp
-  description: JUST RECORD MY LIFE AND STUDY NOTES
-Tim_Paik的项目博客:
-  link: https://gh.timpaik.top/
-  avatar: https://mapp.alicdn.com/1633244893074BvoBzYrEgzOwpbz.png
-  description: 一些有的没的小项目 & Tim_Paik 的碎碎念
+  link: https://rnmeow.com/
+  avatar: https://img.rnmeow.com/avatars/webp/avatar_96x96.webp
+  description: "$ curl -i https://rnmeow.com"
 Zhuym 的博客:
   link: https://zhuym-blog.vercel.app
   avatar: https://s1.ax1x.com/2022/03/06/bBDeJI.png
   description: Zhuym的个人博客
-JackieCat 的猫窝:
-  link: https://jackiecat.top
-  avatar: https://106.55.183.72/lsky/1/avatar.jpg
-  description: 一只猫猫的猫窝
-  #- name: Maxel's Pages
-  #  link: https://blog.maxelbk.eu.org/
-  #  avatar: https://blog.maxelbk.eu.org/r/maxel.jpg
-  #  description: Code & write what we want.
-  # In memory of Maxel Black.
-咕萌小站:
-  link: https://gmoe.cc/
-  avatar: https://gmoe.cc/img/gu.jpg
-  description: "「世界に忘れられた」"
 捞人的小站:
   link: https://zwh.moe/
   avatar: https://fastly.jsdelivr.net/gh/wuhang2003/images@main/avatar.jpg
@@ -83,10 +58,6 @@ GZTime:
   link: https://blog.weearc.top
   avatar: https://blog.weearc.top/image/face.ico
   description: "相离相惜莫相忘，且行且歌且珍惜"
-"viisaus":
-  link: https://www.viisaus.tech
-  avatar: https://www.viisaus.tech/image/header.jpg
-  description: 静水深流，笃志前行♨️♨️♨️
 "Guanran928 的博客":
   link: https://blog.ny4.dev
   avatar: https://blog.ny4.dev/favicon.ico
@@ -95,10 +66,6 @@ GZTime:
   link: https://blog.gxres.net
   avatar: "https://library.gxres.net/images/icons/avatar.webp"
   description: "静寂に問う 答えを求めて"
-乱话三千:
-  link: https://www.zanks.link/
-  avatar: https://avatars.githubusercontent.com/u/144093429?v=4
-  description: 养了一只叫基金的可爱小猫,平时会写点技术向的东西,有点做饭的小爱好
 chihuo2104の部落格:
   link: https://blog.chihuo2104.dev/
   avatar: https://0.gravatar.com/avatar/7d0fc428cf69972fc4addc5ad6b5cff2ffc1ef38c514c16155b840005a96ccd9
