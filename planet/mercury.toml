@@ -1,0 +1,104 @@
+name = "Grassblock's Planet!"
+url = "https://planet.lab.gb0.dev/"
+owner = "Grassblock"
+email = "i@gb0.dev"
+cache = "./cache"
+timeout = "20s"
+#theme = "./theme"
+output = "./output"
+items = 10
+max_pages = 2
+
+[[feed]]
+name = "/var/log/gblab"
+feed = "https://lab.gb0.dev/rss.xml"
+
+[[feed]]
+name = "Zuoye's Blog"
+feed = "https://blog.zuoye.win/rss.xml"
+
+# 证书坏了
+#[[feed]]
+#name = "Huan's Log"
+#feed = "https://rnmeow.com/rss.xml"
+
+[[feed]]
+name = "捞人的小站"
+feed = "https://zwh.moe/feed"
+
+[[feed]]
+name = "HaoTian_22 的折腾日志"
+feed = "https://haotian22.top/atom.xml"
+
+[[feed]]
+name = "Rain's Blog"
+feed = "https://blog.im.ci/feed"
+
+[[feed]]
+name = "WeepingDogel's Blog"
+feed = "https://weepingdogel.github.io/index.xml"
+
+[[feed]]
+name = "GZTime's Blog"
+feed = "https://blog.gzti.me/atom.xml"
+
+[[feed]]
+name = "Vigorous Pro"
+feed = "https://www.wevg.org/atom.xml"
+
+[[feed]]
+name = "湛蓝的调色板"
+feed = "https://blog.nekoq.top/atom.xml"
+
+[[feed]]
+name = "李皓奇的博客"
+feed = "https://liolok.com/zhs/atom.xml"
+
+[[feed]]
+name = "玖只的尾巴"
+feed = "https://blog.yurzi.net/index.xml"
+
+[[feed]]
+name = "KimiBlock's Blog"
+feed = "https://blog.kimiblock.top/atom.xml"
+
+[[feed]]
+name = "風雪城"
+feed = "https://blog.chyk.ink/atom.xml"
+
+[[feed]]
+name = "weearc 的个人博客"
+feed = "https://blog.weearc.top/index.xml"
+
+[[feed]]
+name = "Guanran928 的博客"
+feed = "https://blog.ny4.dev/index.xml"
+
+[[feed]]
+name = "Restent's Notebook"
+feed = "https://blog.gxres.net/atom.xml"
+
+[[feed]]
+name = "chihuo2104の部落格"
+feed = "https://blog.chihuo2104.dev/index.xml"
+
+[[feed]]
+name = "CronfoxLabs"
+feed = "https://cronfox.2434.me/feed.xml"
+
+[[feed]]
+name = "Let's fall in love"
+feed = "https://b.peteralexwain.me/index.xml"
+
+# 还没有 rss feed
+#[[feed]]
+#name = "猫说 Meow"
+#feed = "https://www.lynx3.me"
+
+[[feed]]
+name = "Remik1r3n Blog"
+feed = "https://blog.remiki.ren/feed"
+
+[[feed]]
+name = "Glucy2 的折腾天地"
+feed = "https://glucy2.com/rss.xml"
