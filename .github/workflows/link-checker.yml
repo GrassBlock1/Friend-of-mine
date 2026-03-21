@@ -16,11 +16,16 @@ jobs:
     steps:
         - name: "checkout"
           uses: actions/checkout@v3
+        - name: Setup Go
+          uses: actions/setup-go@v5
+          with:
+            go-version: "1.24"
+            cache: true # 自动缓存 Go 模块
         - name: "run-script"
           id: "run"
           run: |
-            chmod +x ./checker/bin/linkchecker
-            DISABLE_SANDBOX=true ./checker/bin/linkchecker  -file='data/links.yaml' -url="https://lab.gb0.dev" -ourl="https://lab.imgb.space"
+            cd ./checker/src
+            DISABLE_SANDBOX=true go run . -file='data/links.yaml' -url="https://lab.gb0.dev" -ourl="https://lab.imgb.space"
             echo 'log<<EOF' >> $GITHUB_OUTPUT
             cat backlink_report.md >> $GITHUB_OUTPUT
             echo 'EOF' >> $GITHUB_OUTPUT
