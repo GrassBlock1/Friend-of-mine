@@ -90,10 +90,9 @@ feed = "https://cronfox.2434.me/feed.xml"
 name = "Let's fall in love"
 feed = "https://b.peteralexwain.me/index.xml"
 
-# 还没有 rss feed
-#[[feed]]
-#name = "猫说 Meow"
-#feed = "https://www.lynx3.me"
+[[feed]]
+name = "猫说 Meow"
+feed = "https://www.lynx3.me/rss2.xml"
 
 [[feed]]
 name = "Remik1r3n Blog"
