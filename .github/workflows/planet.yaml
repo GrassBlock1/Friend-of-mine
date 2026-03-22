@@ -5,7 +5,7 @@ on:
     branches:
       - master
     schedule:
-      - cron: 0 0 */7 * *
+      - cron: 0 */4 * * *
   workflow_dispatch: # 支持手动触发
 
 # 设置 GITHUB_TOKEN 的权限，允许部署到 GitHub Pages
@@ -32,9 +32,16 @@ jobs:
         with:
           go-version: "1.24" # 根据你项目实际使用的 Go 版本修改
           cache: true # 自动缓存 Go 模块
-
       - name: Install mercury
         run: go install github.com/kgaughan/mercury/cmd/mercury@latest
+
+      - name: Cache site generator cache
+        uses: actions/cache@v4
+        with:
+          path: ./planet/cache  # 对应 --cache-dir 的路径
+          key: site-cache-${{ hashFiles('planet/cache/**') }}
+          restore-keys: |
+            site-cache-
 
       - name: Generate static site
         run: |
