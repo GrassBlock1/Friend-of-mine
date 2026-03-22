@@ -21,6 +21,7 @@ jobs:
           with:
             go-version: "1.24"
             cache: true # 自动缓存 Go 模块
+            cache-dependency-path: './checker/go.sum'
         - name: "run-script"
           id: "run"
           run: |
