@@ -60,7 +60,7 @@
 
 *介绍可以自定义的说*
 
-*如果你的友链页面没有放图片的地方、就不用管 Logo 了，没关系的说~*
+*如果你的友链页面没有放图片的地方、就不用管 Logo 了~*
 
 2. 准备自己站点的信息
     - 站点名称不要超过25个半角字符，否则会在展示时被截断（*即使hover后，能显示的字符只有20个全角字符*）
@@ -71,20 +71,42 @@
         - 建议使用长期稳定的托管服务托管logo，如果实在没有可以将logo放在此仓库的 img 文件夹下，并贴入比如 jsdelivr 等服务提供的**可供大陆地区访问的链接**
         - 使用现代浏览器的较新版本（如 Chrome、Firefox、Opera等等）可以正常查看的文件格式，如 `png`、`jpg`、`webp`、`avif`、`svg`、`ico` 等等
     - 原则上站点信息应当适合在任何网站上展示给任何年龄段的任何人
+
 3. 在Github上Fork此仓库。
+
 4. 参照 [Butterfly 文档](https://butterfly.js.org/posts/dc584b87/#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E6%B7%BB%E5%8A%A0) 和[YAML 入门](https://www.runoob.com/w3cnote/yaml-intro.html)修改 `data/link.yml` ~~或者直接参照已有格式添加就可以~~
 
     格式大致如下（仅供参考）：
     ```yaml
-        - name: "站点名称",
+    "站点名称":
           link: "https://example.com/",
           avatar: "https://example.com/img.png",
-          descr: "站点介绍"  
+          descr: "站点介绍"
     ```
+
 5. 完成后新建一个Pull Request即可。
-当你的Pull Request被通过后，即可显示在[友链页面](https://lab.gb0.dev/friends)。
+  当你的Pull Request被通过后，即可显示在[友链页面](https://lab.gb0.dev/friends)。
+
+#### 加入星球
+
+*有关星球的更多信息，请查看 [星球的 README](./planet/README.md).*
+
+**如果没有特殊指定，那么你所添加的站点将加入星球，请多注意**
+
+如果要加入星球的话，请一并编辑 `planet/mercury.toml`，添加以下内容：
+
+```toml
+[[feed]]
+name = "站点名称"
+feed = "https://example.com/atom.xml" # 支持 Atom/RSS 格式的 xml
+```
+
+然后随友链一同提交 PR 即可。
+
+**注意：**提交的 RSS 最好支持全文解析，如果你部署了防止机器爬取的策略（如 Cloudflare 默认规则等），请将 `planet-mercury` 的 UA 对 rss 的请求添加到白名单。
 
 ### 如果你目前没有一个博客/个人主页
+
 参考[如果你目前没有一个博客/个人主页](#如果你目前没有一个博客个人主页)
 
 如果博客建立完成则按照上面的步骤进行。
