@@ -4,7 +4,7 @@ owner = "Grassblock"
 email = "i@gb0.dev"
 cache = "./cache"
 timeout = "20s"
-#theme = "./theme"
+theme = "./themes/default"
 output = "./output"
 items = 10
 max_pages = 2
@@ -101,3 +101,7 @@ feed = "https://blog.remiki.ren/feed"
 [[feed]]
 name = "Glucy2 的折腾天地"
 feed = "https://glucy2.com/rss.xml"
+
+[[feed]]
+name = "Cynosura"
+feed = "https://cynosura.one/rss.xml"
