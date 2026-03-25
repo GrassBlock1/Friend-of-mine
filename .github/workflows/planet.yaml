@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    schedule:
-      - cron: 0 */4 * * *
+  schedule:
+    - cron: 0 */4 * * *
   workflow_dispatch: # 支持手动触发
 
 # 设置 GITHUB_TOKEN 的权限，允许部署到 GitHub Pages
