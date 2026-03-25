@@ -1,0 +1,7 @@
+name = "GB-Planet"
+
+[[bom]]
+path = "static/style.css"
+
+[[bom]]
+path = "robots.txt"

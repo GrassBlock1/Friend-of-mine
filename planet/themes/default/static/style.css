@@ -1,0 +1,117 @@
+/* beautify ignore:start */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+/* beautify ignore:end */
+
+body {
+  font-family: sans-serif;
+  color: #777;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 2rem;
+  position: relative;
+}
+
+body>header {
+  margin: 0;
+  color: #333;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+body>header h1 {
+  margin: 0.2rem 0;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+article {
+  margin: 2rem 0 4rem 0;
+}
+
+article h1,
+footer h1,
+article h2,
+article h3 {
+  font-weight: 300;
+  color: #888;
+  margin: 0.2rem 0 0 0;
+  line-height: 1.2;
+}
+
+article h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+article header div {
+  font-size: 80%;
+}
+
+article header .author,
+article header .site-link {
+  font-weight: 600;
+}
+article img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+pre {
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  font-size: 80%;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+blockquote em {
+  font-style: normal;
+}
+
+#pagination {
+  text-align: center;
+}
+
+#pagination span {
+  display: inline-block;
+  width: 25%;
+}
+
+/* An SVG of the feed icon. This way, we can display it just by applying a class. */
+.feed {
+  display: inline-block;
+  background: center no-repeat url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48IS0tIEljb24gZnJvbSBNYXRlcmlhbCBTeW1ib2xzIGJ5IEdvb2dsZSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9nb29nbGUvbWF0ZXJpYWwtZGVzaWduLWljb25zL2Jsb2IvbWFzdGVyL0xJQ0VOU0UgLS0+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNNSAyMXEtLjgyNSAwLTEuNDEyLS41ODdUMyAxOXQuNTg4LTEuNDEyVDUgMTd0MS40MTMuNTg4VDcgMTl0LS41ODcgMS40MTNUNSAyMW0xMiAwcTAtMi45MjUtMS4xLTUuNDYydC0zLTQuNDM4dC00LjQzNy0zVDMgN1Y0cTMuNTUgMCA2LjYyNSAxLjMyNXQ1LjQgMy42NXQzLjY1IDUuNFQyMCAyMXptLTYgMHEwLTEuNjc1LS42MjUtMy4xMTNUOC42NSAxNS4zNXQtMi41MzctMS43MjVUMyAxM3YtM3EyLjMgMCA0LjI4OC44NjN0My40ODcgMi4zNjJ0Mi4zNjMgMy40ODhUMTQgMjF6Ii8+PC9zdmc+);
+  background-size: 1rem 1rem;
+  line-height: 1;
+  width: 1rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.feed::before {
+  content: "\00a0";
+}
+footer p.copyright {
+  font-size: 80%;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+address {
+  font-size: 80%;
+  margin-bottom: 2rem;
+  text-align: right;
+}
+
+@media (min-width: 48rem) {
+  body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

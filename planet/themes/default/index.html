@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{.Name}}</title>
+		<meta name="generator" content="{{.Generator}}">
+		<link rel="stylesheet" href="static/style.css" type="text/css">
+		{{ if .GenerateFeed -}}
+		<link rel="alternate" href="atom.xml" type="application/atom+xml" title="Atom feed">
+		{{ end -}}
+		<link rel="outline" href="opml.xml" type="text/x-opml" title="OPML">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="robots" content="noindex,nofollow">
+	</head>
+	<body>
+		<header class="header">
+		<h1 class="title">{{.Name}}</h1>
+		<a href="https://github.com/GrassBlock1/Friend-of-mine/blob/master/planet/README.md">Read more about the site</a>
+		</header>
+		{{range .Items}}
+		<article>
+			<header>
+				<h1><a href="{{.Link}}">{{.Title}}</a></h1>
+				<div>{{if .Author}}by <span class="author">{{.Author}}</span> {{end}}in <a class="site-link" href="{{.SiteLink}}">{{.FeedName}}</a></div>
+				{{ if .Published -}}
+				<div>Posted <time datetime="{{.Published | isodate}}">{{.Published | date "January 2, 2006 at 15:04:05 MST"}}</time></div>
+				{{- end }}
+			</header>
+			<div class="article-body">
+			{{- if .Summary -}}
+				{{.Summary  | excerpt 200 | sanitize}}
+			{{- else if .Content -}}
+				{{.Content | excerpt 500 | sanitize}}
+			{{- end -}}
+			</div>
+		</article>
+		{{end}}
+		<nav id="pagination">
+			<span>{{if .PrevPage}}<a href="{{.PrevPage}}">&xlarr; Previous</a>{{end}}</span><span>{{if .NextPage}}<a href="{{.NextPage}}">Next &xrarr;</a>{{end}}</span>
+		</nav>
+		<footer>
+			<h1>Feeds</h1>
+			<ul>
+			{{range .Feeds}}
+			<li><a href="{{.FeedLink}}" class="feed" aria-hidden="true" title="Feed"></a> <a href="{{.Link}}">{{.Title}}</a></li>
+			{{end}}
+			</ul>
+			<p class="copyright"><i>Contents on the site are generated from RSS feeds above, the copyright belongs to original author.</i></p>
+		</footer>
+
+		<address>Generated: <time>{{.Generated | isodate}}</time><address>
+	</body>
+</html>
