@@ -49,7 +49,7 @@ All managed rules
 All Super Bot Fight Mode Rules
 ```
 
-如果还不行，请尝试关闭 `Bot Fight Mode` 之后重试。
+如果还不行，请尝试关闭 `Bot Fight Mode` （又名 `自动程序攻击模式` ）之后重试。
 
 ## 对于开发
 
