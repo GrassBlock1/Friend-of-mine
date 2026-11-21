@@ -17,10 +17,9 @@ feed = "https://lab.gb0.dev/rss.xml"
 name = "Zuoye's Blog"
 feed = "https://blog.zuoye.win/rss.xml"
 
-# 证书坏了
-#[[feed]]
-#name = "Huan's Log"
-#feed = "https://rnmeow.com/rss.xml"
+[[feed]]
+name = "Conor Kuo"
+feed = "https://cnrkuo.com/atom.xml"
 
 [[feed]]
 name = "捞人的小站"
